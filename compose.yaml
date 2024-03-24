@@ -1,0 +1,6 @@
+services:
+  agent:
+    build: .
+    container_name: $RUNNER_NAME
+    env_file:
+      - .env
