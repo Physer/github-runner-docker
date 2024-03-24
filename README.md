@@ -29,7 +29,27 @@ In order to get an access token to connect the runner to your repository, follow
 
 ### Running the pre-built Docker image
 
-WIP
+You can find the Docker image on the [Docker Hub](https://hub.docker.com/r/physer/github-runner-docker).
+
+#### Using the Docker CLI
+
+Using the Docker CLI you can quickly run the Docker image as a container. Replace the environment variable values with your data and execute the following command:
+
+`docker run --name github-runner-docker -d -e REPOSITORY_PATH=foo -e RUNNER_ACCESS_TOKEN=foo -e RUNNER_NAME=foo physer/github-runner-docker`
+
+#### Using Docker Compose
+
+You can also run the Docker container using Compose. Use the following service in your `compose.yaml` file:
+```dockerfile
+services:
+  runner:
+    image: physer/github-runner-docker
+    container_name: github-runner-docker
+    environment:
+      - REPOSITORY_PATH=foo
+      - RUNNER_ACCESS_TOKEN=foo
+      - RUNNER_NAME=foo
+```
 
 ### Building and running from source
 
