@@ -1,7 +1,6 @@
 FROM ghcr.io/actions/actions-runner:latest
 
-COPY ./setup.sh .
-USER root
-RUN chmod +x ./setup.sh
-USER runner
-CMD ["./setup.sh"]
+RUN sudo apt update -y && sudo apt install git curl -y
+
+COPY ./runner.sh .
+CMD ["./runner.sh"]

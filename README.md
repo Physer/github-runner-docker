@@ -62,7 +62,8 @@ If you wish to build and run the Docker container from the source of the reposit
 
 ## Additional software
 
-Currently no additional software has been installed.
+* [Git](https://git-scm.com/)
+* [Curl](https://curl.se/)
 
 ## References
 
